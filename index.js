@@ -7,7 +7,11 @@ import './src/styles/styles.less';
 
 const store = configureStore();
 
-render(
-  <Root store={store}/>,
-  document.getElementById('application-root')
-);
+const init = props => {
+  render(
+    <Root store={store}  {...props}/>,
+    document.getElementById('application-root')
+  );
+};
+
+init({startSVGFactor: 5});

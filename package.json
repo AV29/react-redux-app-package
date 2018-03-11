@@ -29,6 +29,7 @@
     "build:es": "babel ./src --out-dir ./dist/es --source-maps --presets stage-1,react --plugins babel-plugin-add-module-exports,babel-plugin-transform-react-remove-prop-types,babel-plugin-transform-runtime",
     "prebuild": "npm run clean:dist",
     "build": "npm run build:min && npm run build:es && npm run build:umd && npm run copy:data",
+    "prepublish": "npm run build",
     "ultimate:dev": "npm install && npm start",
     "ultimate": "npm install && npm run build"
   },
