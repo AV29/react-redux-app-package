@@ -1,0 +1,89 @@
+@import 'variables';
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: @default-font-family;
+  font-size: 62.5%;
+  color: @application-font-color;
+  background-color: @application-background-color;
+  margin: 0;
+  padding: 0;
+}
+
+a, button, select, option, input, textarea {
+  font-family: @default-font-family;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+td, th {
+  padding: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+a {
+  background-color: transparent;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}

@@ -1,0 +1,34 @@
+@import 'variables';
+
+.generate-column-layout(10);
+
+.gradient(@from: @blue_mid, @to: darken(@blue_mid, 10%)) {
+  background: @from linear-gradient(to bottom, @from, @to);
+}
+
+.column(@count) {
+  width: 100% / @count;
+  padding-right: 75px;
+}
+
+.generate-column-layout(@count, @i: 1) when (@i =< @count) {
+  .col-@{i} {
+    .column(@i)
+  }
+
+  .generate-column-layout(@count, (@i + 1));
+}
+
+.centered(@orientation, @offset: 15px) when (@orientation = 'vertical'){
+  position: absolute;
+  top: 50%;
+  right: @offset;
+  transform: translateY(-50%);
+}
+
+.centered(@orientation, @offset: 15px) when (@orientation = 'horizontal'){
+  position: absolute;
+  left: 50%;
+  top: @offset;
+  transform: translateX(-50%);
+}
