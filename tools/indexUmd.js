@@ -7,9 +7,9 @@ import '../src/styles/styles.less';
 
 const store = configureStore();
 
-export const init = ({id}) => {
+export const init = ({id, ...props}) => {
   render(
-    <Root store={store}/>,
+    <Root store={store} {...props}/>,
     document.getElementById(id)
   );
 };

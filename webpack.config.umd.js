@@ -4,7 +4,7 @@ const webpack = require('webpack');
 module.exports = {
   devtool: 'source-map',
   entry: {
-    'react-redux-test-component': './tools/index-umd'
+    'react-redux-test-component': './tools/indexUmd'
   },
   output: {
     path: __dirname + '/dist/umd',
