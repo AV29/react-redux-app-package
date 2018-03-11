@@ -32,10 +32,18 @@ class App extends Component {
   }
 
   render() {
-    const {actions: {increaseCounter, decreaseCounter}, counter, isEmbedded} = this.props;
+    const {actions: {increaseCounter, decreaseCounter}, counter, isEmbedded, startSVGFactor} = this.props;
     const {svgSizeFactor} = this.state;
     return (
       <div className={classNames("applicationShell", {isEmbedded})}>
+        {
+          startSVGFactor ?
+            <div className="testBlock">
+              <h1>This is a passed param</h1>
+              <h2>{startSVGFactor}</h2>
+            </div> :
+            null
+        }
         <div className="testBlock">
           <h1>Redux store test</h1>
           <button onClick={increaseCounter}>Increase</button>
