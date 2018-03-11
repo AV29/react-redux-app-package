@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import classNames from 'classnames';
-import {func, shape, number, bool} from 'prop-types';
+import {func, shape, number, bool, string} from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {createStructuredSelector} from 'reselect';
@@ -12,8 +12,9 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    this.passedParams = ['svgColor', 'startSVGFactor'];
     this.state = {
-      svgSizeFactor: props.startSVGFactor || 1
+      svgSizeFactor: props.startSVGFactor || 10
     };
 
     this.enlargeSVG = this.enlargeSVG.bind(this);
@@ -21,7 +22,7 @@ class App extends Component {
   }
 
   reduceSVG() {
-    if(this.state.svgSizeFactor === 0) {
+    if (this.state.svgSizeFactor === 0) {
       return;
     }
     this.setState(state => ({svgSizeFactor: state.svgSizeFactor - 1}));
@@ -32,17 +33,18 @@ class App extends Component {
   }
 
   render() {
-    const {actions: {increaseCounter, decreaseCounter}, counter, isEmbedded, startSVGFactor} = this.props;
+    const {actions: {increaseCounter, decreaseCounter}, counter, isEmbedded, svgColor} = this.props;
     const {svgSizeFactor} = this.state;
     return (
       <div className={classNames("applicationShell", {isEmbedded})}>
         {
-          startSVGFactor ?
+          this.passedParams.map(param => (
+            this.props[param] ?
             <div className="testBlock">
-              <h1>This is a passed param</h1>
-              <h2>{startSVGFactor}</h2>
-            </div> :
-            null
+              <h1>{`You have passed ${param} param and it equals`}</h1>
+              <h2>{this.props[param]}</h2>
+            </div> : null
+          ))
         }
         <div className="testBlock">
           <h1>Redux store test</h1>
@@ -59,7 +61,7 @@ class App extends Component {
           <h1>SVG test</h1>
           <Icon
             icon="spinner"
-            color="tomato"
+            color={svgColor || "tomato"}
             width={svgSizeFactor * 5}
             height={svgSizeFactor * 5}
           />
@@ -71,6 +73,7 @@ class App extends Component {
 
 App.propTypes = {
   counter: number,
+  svgColor: string,
   startSVGFactor: number,
   isEmbedded: bool,
   actions: shape({

@@ -2,7 +2,7 @@
 node_modules
 npm-debug.log
 coverage
-/webpack.config.min.js
+/webpack.config.prod.js
 /webpack.config.dev.js
 /webpack.config.umd.js
 /postcss.config.js

@@ -14,4 +14,4 @@ const init = props => {
   );
 };
 
-init({startSVGFactor: 5});
+init();

@@ -22,7 +22,7 @@
     "remove:min": "rimraf ./dist/min",
     "copy:data": "cpx ./dist/min/styles.css ./dist && ncp ./src/assets ./dist/es/assets",
     "prebuild:min": "npm run clean:min",
-    "build:min": "cross-env NODE_ENV=production webpack --config webpack.config.min.js --bail",
+    "build:min": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js --bail",
     "prebuild:umd": "npm run clean:umd",
     "build:umd": "cross-env NODE_ENV=production webpack --config webpack.config.umd.js --bail",
     "prebuild:es": "npm run clean:es",
