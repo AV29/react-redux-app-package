@@ -4,6 +4,11 @@
   "description": "A small application built with react-redux to test it's embedding into other applications",
   "main": "./dist/es/index.js",
   "module": "./dist/es/index.js",
+  "homepage": "https://github.com/AV29/react-redux-app-package.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AV29/react-redux-app-package.git"
+  },
   "scripts": {
     "open:src": "babel-node tools/serverDev.js",
     "start": "npm run open:src",
@@ -27,7 +32,7 @@
     "ultimate:dev": "npm install && npm start",
     "ultimate": "npm install && npm run build"
   },
-  "author": "Anton Vlasik",
+  "author": "Anton Vlasik <snumber29@gmail.com>",
   "license": "ISC",
   "browserslist": [
     "last 2 versions"
@@ -68,6 +73,8 @@
     "postcss-flexbugs-fixes": "~3.2.0",
     "postcss-loader": "~2.0.9",
     "prop-types": "~15.6.0",
+    "react": "~16.2.0",
+    "react-dom": "~16.1.0",
     "react-svg-loader": "~2.1.0",
     "rimraf": "~2.6.2",
     "style-loader": "~0.19.1",
@@ -80,13 +87,15 @@
     "babel-polyfill": "~6.26.0",
     "classnames": "~2.2.5",
     "immutable": "~3.8.2",
-    "react": "~16.2.0",
-    "react-dom": "~16.1.0",
     "react-highlight-words": "~0.10.0",
     "react-redux": "~5.0.6",
     "react-select": "~1.2.1",
     "redux": "~3.7.2",
     "redux-thunk": "~2.2.0",
     "reselect": "~3.0.1"
+  },
+  "peerDependencies": {
+    "react": "~16.2.0",
+    "react-dom": "~16.2.0"
   }
 }

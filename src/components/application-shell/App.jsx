@@ -7,14 +7,13 @@ import {createStructuredSelector} from 'reselect';
 import {increaseCounter, decreaseCounter} from '../../actions/counterActions';
 import {counterSelector} from '../../selectors/counterSelectors';
 import Icon from '../common/icon/Icon';
-import './App.less';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      svgSizeFactor: 10
+      svgSizeFactor: props.startSVGFactor || 1
     };
 
     this.enlargeSVG = this.enlargeSVG.bind(this);
@@ -64,6 +63,7 @@ class App extends Component {
 
 App.propTypes = {
   counter: number,
+  startSVGFactor: number,
   isEmbedded: bool,
   actions: shape({
     increaseCounter: func,

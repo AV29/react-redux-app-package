@@ -1,0 +1,17 @@
+.idea
+node_modules
+npm-debug.log
+coverage
+webpack.config.min.js
+webpack.config.dev.js
+webpack.config.umd.js
+readme.md
+postcss.config.js
+index.js
+index.html
+.gitignore
+.npmignore
+.editorconfig
+.babelrc
+tools
+src
