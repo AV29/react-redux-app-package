@@ -63,33 +63,6 @@ module.exports = {
         }
       },
       {
-        test: /(\.css|\.less)$/,
-        exclude: [/docs/],
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-              minimize: true,
-              importLoaders: 1,
-            }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true
-            }
-          },
-          {
-            loader: 'less-loader',
-            options: {
-              sourceMap: true
-            }
-          }
-        ]
-      },
-      {
         test: /\.(jpe?g|png|gif)$/i,
         loader: 'file-loader'
       },

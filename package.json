@@ -20,7 +20,7 @@
     "remove:umd": "rimraf ./dist/umd",
     "remove:es": "rimraf ./dist/es",
     "remove:min": "rimraf ./dist/min",
-    "copy:data": "cpx ./dist/min/styles.css ./dist && ncp ./src/assets ./dist/es/assets",
+    "copy:data": "cpx ./dist/min/styles.css ./dist && ncp ./src/assets ./dist/es/assets && npm run clean:min",
     "prebuild:min": "npm run clean:min",
     "build:min": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js --bail",
     "prebuild:umd": "npm run clean:umd",
