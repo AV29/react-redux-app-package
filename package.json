@@ -1,6 +1,6 @@
 {
   "name": "anton-vlasik-react-test-component",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A small application built with react-redux to test it's embedding into other applications",
   "main": "./dist/es/index.js",
   "module": "./dist/es/index.js",
