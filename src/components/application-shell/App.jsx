@@ -7,6 +7,7 @@ import {createStructuredSelector} from 'reselect';
 import {increaseCounter, decreaseCounter} from '../../actions/counterActions';
 import {counterSelector} from '../../selectors/counterSelectors';
 import Icon from '../common/icon/Icon';
+import SelectInput from '../common/select-input/SelectInput';
 
 class App extends Component {
   constructor(props) {
@@ -64,6 +65,18 @@ class App extends Component {
             color={svgColor || "tomato"}
             width={svgSizeFactor * 5}
             height={svgSizeFactor * 5}
+          />
+        </div>
+        <div className="testBlock">
+          <h1>Input Component</h1>
+          <SelectInput
+            name="available-layers-list-type"
+            className="layerTypesSelect"
+            label="Test Label"
+            value={1}
+            onChange={() => {}}
+            options={[{value: 1, label: 'First'}, {value: 2, label: 'Second'}, {value: 3, label: 'Third'}]}
+            searchable={false}
           />
         </div>
       </div>
