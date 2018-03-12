@@ -39,9 +39,9 @@ class App extends Component {
     return (
       <div className={classNames("applicationShell", {isEmbedded})}>
         {
-          this.passedParams.map(param => (
+          this.passedParams.map((param, index) => (
             this.props[param] ?
-            <div className="testBlock">
+            <div key={index} className="testBlock">
               <h1>{`You have passed ${param} param and it equals`}</h1>
               <h2>{this.props[param]}</h2>
             </div> : null
