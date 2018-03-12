@@ -1,2 +1,5 @@
+# Ignore everything
 *
+# Except
 !/dist/**/*
+# ... and package.json and readme.md which are never ignored
