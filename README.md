@@ -9,10 +9,6 @@ After installing via ```npm install``` you need to:
 
 ```import TestApp from 'anton-vlasik-react-test-component';```
 
-also if you want to use default styles you will have to import them in your entry point
-
-```import 'anton-vlasik-react-test-component/dist/styles.css'```
-
 This component is created to demonstrate an ability of embedding react-redux application into another react application 
 (even without redux). It simply demonstrates interacting with redux store via simple counter. Also there is an ability 
 to interact with react's component local state. Just click 'Enlarge' and 'Reduce' buttons to see how svg icon behaves.

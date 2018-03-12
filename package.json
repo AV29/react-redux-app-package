@@ -1,6 +1,6 @@
 {
   "name": "anton-vlasik-react-test-component",
-  "version": "0.0.10",
+  "version": "0.0.15",
   "description": "A small application built with react-redux to test it's embedding into other applications",
   "main": "./dist/es/index.js",
   "module": "./dist/es/index.js",
@@ -26,7 +26,7 @@
     "prebuild:umd": "npm run clean:umd",
     "build:umd": "cross-env NODE_ENV=production webpack --config webpack.config.umd.js --bail",
     "prebuild:es": "npm run clean:es",
-    "build:es": "babel ./src --out-dir ./dist/es --source-maps --presets stage-1,react --plugins babel-plugin-add-module-exports,babel-plugin-transform-react-remove-prop-types,babel-plugin-transform-runtime",
+    "build:es": "cross-env NODE_ENV=production babel ./src --out-dir ./dist/es --source-maps --presets stage-1,react --plugins babel-plugin-add-module-exports,babel-plugin-transform-react-remove-prop-types,babel-plugin-transform-runtime",
     "prebuild": "npm run clean:dist",
     "build": "npm run build:min && npm run build:es && npm run build:umd && npm run copy:data",
     "prepublish": "npm run build",

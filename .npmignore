@@ -1,16 +1,5 @@
-.idea
-node_modules
-npm-debug.log
-coverage
-/webpack.config.prod.js
-/webpack.config.dev.js
-/webpack.config.umd.js
-/postcss.config.js
-/index.js
-/index.html
-/.gitignore
-/.npmignore
-/.editorconfig
-/.babelrc
-/tools
-/src
+# Ignore everything
+*
+# Except
+!/dist/**/*
+# ... and package.json and readme.md which are never ignored
